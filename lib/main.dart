@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter 你好'),
     );
   }
 }
@@ -94,7 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              '被点击的次数是三',
+            ),
+            Text(
+              '添加一行文案'
             ),
             Text(
               '$_counter',
