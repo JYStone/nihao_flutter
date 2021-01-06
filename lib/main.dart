@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './demo/drawer_demo.dart';
 import './demo/listView_demo.dart';
+import './demo/bottomNavigationBarDemo.dart';
 
 void main() {
   runApp(App());
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
         // 设置主题
         theme: ThemeData(
           // 主题色
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.purple,
           // 水波纹颜色
           splashColor: Colors.white70,
           // 高亮颜色
@@ -61,29 +62,13 @@ class Home extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Icon(Icons.local_florist, size: 128.0, color: Colors.black12),
+            ListViewDemo(),
             Icon(Icons.change_history, size: 128.0, color: Colors.black12),
             Icon(Icons.directions_bike, size: 128.0, color: Colors.black12),
           ],
         ),
         drawer: DrawerDemo(),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-            ),
-          ],
-        ),
+        bottomNavigationBar: bottomNavigatinBarDemo(),
       ),
     );
   }
