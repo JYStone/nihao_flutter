@@ -17,7 +17,6 @@ class _BottomNavigationBarDemoState extends State<bottomNavigatinBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       type: BottomNavigationBarType.fixed,
