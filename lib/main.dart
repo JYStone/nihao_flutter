@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'model/post.dart';
+import './demo/drawer_demo.dart';
+import './demo/listView_demo.dart';
+
 void main() {
   runApp(App());
 }
@@ -8,77 +10,80 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
-      // 设置主题
-      theme: ThemeData (
-        primarySwatch: Colors.yellow
-      )
-    );
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+        // 设置主题
+        theme: ThemeData(
+          // 主题色
+          primarySwatch: Colors.blue,
+          // 水波纹颜色
+          splashColor: Colors.white70,
+          // 高亮颜色
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+        ));
   }
 }
 
 class Home extends StatelessWidget {
-  Widget _listItemBuilder(BuildContext context, int index) {
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(8.0),
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(height: 16.0),
-          Text(
-            posts[index].title,
-            // style: Theme.of(context).textTheme.title,
-            style: TextStyle (
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            )
-          ),
-          Text(
-            posts[index].author,
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              color: Colors.black12,
-            ),
-            // style: Theme.of(context).textTheme.subtitle1,
-          ),
-          SizedBox(height: 16.0),
-        ],
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
         // 设置导航栏
         appBar: AppBar(
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   tooltip: 'Navigation',
+          //   onPressed: () => debugPrint('Navigation button is pressed.'),
+          // ),
           title: Text("首页标题"),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'Search',
+                onPressed: () => debugPrint('Search button is pressed.')),
+          ],
           // 设置导航栏下阴影 默认是4.0
           elevation: 4.0,
+          bottom: TabBar(
+            unselectedLabelColor: Colors.white54,
+            indicatorColor: Colors.black54,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: 1.0,
+            tabs: <Widget>[
+              Tab(icon: Icon(Icons.local_florist)),
+              Tab(icon: Icon(Icons.change_history)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
         ),
-        body: ListView.builder(
-          itemBuilder: _listItemBuilder,
-          itemCount: posts.length,
-        )
-      );
-  }
-}
-// 定义一个小部件
-class Hello extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'hello word',
-        textDirection: TextDirection.ltr,
-        style: TextStyle (
-          fontSize: 40, 
-          fontWeight: FontWeight.bold,
-          color: Colors.black87,
-        )
+        body: TabBarView(
+          children: [
+            Icon(Icons.local_florist, size: 128.0, color: Colors.black12),
+            Icon(Icons.change_history, size: 128.0, color: Colors.black12),
+            Icon(Icons.directions_bike, size: 128.0, color: Colors.black12),
+          ],
+        ),
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+            ),
+          ],
+        ),
       ),
     );
   }
