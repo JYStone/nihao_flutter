@@ -25,7 +25,7 @@ class SliverDemo extends StatelessWidget {
                 ),
               ),
               background: Image.network(
-                'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1718408090,3818562894&fm=26&gp=0.jpg',
+                'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2099423025,3974043555&fm=26&gp=0.jpg',
                 fit: BoxFit.cover,
               ),
             ),
