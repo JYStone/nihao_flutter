@@ -7,6 +7,7 @@ import './demo/layout_demo.dart';
 import './demo/view_demo.dart';
 import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
+import './demo/form_demo.dart';
 
 void main() {
   runApp(App());
@@ -17,15 +18,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(), //NavigatorDemo(),
+        // home: Home(), //NavigatorDemo(),
         // routes: {
         //   '/about': (BuildContext context) => PageDemo(title: 'About'),
         // },
-        // initialRoute: '/about',
-        // routes: {
-        //   '/': (context) => NavigatorDemo(),
-        //   '/about': (BuildContext context) => PageDemo(title: 'About'),
-        // },
+        initialRoute: '/form',
+        routes: {
+          '/': (context) => NavigatorDemo(),
+          '/about': (context) => PageDemo(title: 'About'),
+          '/form': (context) => FormDemo(),
+        },
         // 设置主题
         theme: ThemeData(
           // 主题色
@@ -34,6 +36,8 @@ class App extends StatelessWidget {
           splashColor: Colors.white70,
           // 高亮颜色
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+
+          accentColor: Color.fromRGBO(35, 100, 255, 1.0),
         ));
   }
 }
