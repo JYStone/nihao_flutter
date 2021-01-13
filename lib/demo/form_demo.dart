@@ -4,7 +4,6 @@ class FormDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: ThemeDemo(),
       body: Theme(
         data: Theme.of(context).copyWith(
           primaryColor: Colors.black,
@@ -20,8 +19,8 @@ class FormDemo extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              RegisterForm(),
-              // TextFieldDemo(),
+              // RegisterForm(),
+              TextFieldDemo(),
             ],
           ),
         ),
@@ -48,7 +47,7 @@ class _RegisterFormState extends State<RegisterForm> {
       registerFormKey.currentState.save();
       debugPrint('用户名: $username');
       debugPrint('密码: $password');
-
+      // 展示loading
       Scaffold.of(context).showSnackBar(SnackBar(content: Text('正在注册')));
     } else {
       setState(() {
@@ -100,6 +99,7 @@ class _RegisterFormState extends State<RegisterForm> {
             validator: validatePassword,
             autovalidate: autovalidate,
           ),
+          // 添加32的间隔
           SizedBox(height: 32.0),
           Container(
             width: double.infinity,
