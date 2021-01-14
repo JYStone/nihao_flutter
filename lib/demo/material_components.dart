@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import './button_demo.dart';
 import './floating_action_button_demo.dart';
 import './popup_menu_button_demo.dart';
+import './form_demo.dart';
+import './checkbox_demo.dart';
+import './Radio_demo.dart';
+import './switch_demo.dart';
+import './slider_demo.dart';
+import './dateTime_Demo.dart';
+import './simpleDialog_demo.dart';
 
 class MaterialComponentsDemo extends StatelessWidget {
   @override
@@ -13,6 +20,13 @@ class MaterialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListItem(title: 'simpleDialog', page: SimpleDialogDemo()),
+          ListItem(title: 'date', page: DateTimeDemo()),
+          ListItem(title: 'Slider', page: SliderDemo()),
+          ListItem(title: 'Radio', page: RadioDemo()),
+          ListItem(title: 'Switch', page: SwitchDemo()),
+          ListItem(title: 'Checkbox', page: CheckboxDemo()),
+          ListItem(title: 'Form', page: FormDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),
           ListItem(title: 'popUpMenuButtonDemo', page: PopupMenuButtonDemo()),
           ListItem(
