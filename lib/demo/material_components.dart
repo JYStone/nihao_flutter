@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihao_flutter/demo/expansion_panel_demo.dart';
 import './button_demo.dart';
 import './floating_action_button_demo.dart';
 import './popup_menu_button_demo.dart';
@@ -9,6 +10,9 @@ import './switch_demo.dart';
 import './slider_demo.dart';
 import './dateTime_Demo.dart';
 import './simpleDialog_demo.dart';
+import './alertDialog_demo.dart';
+import './bottom_sheet.dart';
+import './snack_bar_demo.dart';
 
 class MaterialComponentsDemo extends StatelessWidget {
   @override
@@ -20,6 +24,10 @@ class MaterialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListItem(title: 'expansionPanelDemo', page: ExpansionPanelDemo()),
+          ListItem(title: 'snackBarDemo', page: SnackBarDemo()),
+          ListItem(title: 'bottomSheetDemo', page: BottomSheetDemo()),
+          ListItem(title: 'alertDialogDemo', page: AlertDialogDemo()),
           ListItem(title: 'simpleDialog', page: SimpleDialogDemo()),
           ListItem(title: 'date', page: DateTimeDemo()),
           ListItem(title: 'Slider', page: SliderDemo()),
