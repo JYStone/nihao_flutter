@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihao_flutter/StateManagment/state_managment_demo.dart';
 import './demo/drawer_demo.dart';
 import './demo/listView_demo.dart';
 import './demo/bottomNavigationBarDemo.dart';
@@ -9,6 +10,7 @@ import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
+import './StateManagment/state_managment_demo.dart';
 
 void main() {
   runApp(App());
@@ -23,12 +25,13 @@ class App extends StatelessWidget {
         // routes: {
         //   '/about': (BuildContext context) => PageDemo(title: 'About'),
         // },
-        initialRoute: '/mdc',
+        initialRoute: '/state-managment',
         routes: {
           '/': (context) => NavigatorDemo(),
           '/about': (context) => PageDemo(title: 'About'),
           '/form': (context) => FormDemo(),
-          '/mdc': (context) => MaterialComponentsDemo()
+          '/mdc': (context) => MaterialComponentsDemo(),
+          '/state-managment': (context) => StateManagmentDemo(),
         },
         // 设置主题
         theme: ThemeData(
