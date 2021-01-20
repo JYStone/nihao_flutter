@@ -15,6 +15,9 @@ import './bottom_sheet.dart';
 import './snack_bar_demo.dart';
 import './clip_demo.dart';
 import './dataTable_demo.dart';
+import './paginated_data_table_demo.dart';
+import './card_demo.dart';
+import 'stepper_demo.dart';
 
 class MaterialComponentsDemo extends StatelessWidget {
   @override
@@ -26,6 +29,9 @@ class MaterialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListItem(title: 'stepperDemo', page: StepperDemo()),
+          ListItem(title: 'cardDemo', page: CasrDemo()),
+          ListItem(title: 'paginatedDataDemo', page: PaginatedDataTableDemo()),
           ListItem(title: 'dataTableDemo', page: DataTableDemo()),
           ListItem(title: 'clipDemo', page: ClipDemo()),
           ListItem(title: 'expansionPanelDemo', page: ExpansionPanelDemo()),

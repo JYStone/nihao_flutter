@@ -19,17 +19,17 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(), //NavigatorDemo(),
+        // home: Home(), //NavigatorDemo(),
         // routes: {
         //   '/about': (BuildContext context) => PageDemo(title: 'About'),
         // },
-        // initialRoute: '/mdc',
-        // routes: {
-        //   '/': (context) => NavigatorDemo(),
-        //   '/about': (context) => PageDemo(title: 'About'),
-        //   '/form': (context) => FormDemo(),
-        //   '/mdc': (context) => MaterialComponentsDemo()
-        // },
+        initialRoute: '/mdc',
+        routes: {
+          '/': (context) => NavigatorDemo(),
+          '/about': (context) => PageDemo(title: 'About'),
+          '/form': (context) => FormDemo(),
+          '/mdc': (context) => MaterialComponentsDemo()
+        },
         // 设置主题
         theme: ThemeData(
           // 主题色
