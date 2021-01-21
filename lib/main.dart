@@ -31,7 +31,7 @@ class App extends StatelessWidget {
           '/about': (context) => PageDemo(title: 'About'),
           '/form': (context) => FormDemo(),
           '/mdc': (context) => MaterialComponentsDemo(),
-          '/state-managment': (context) => StateManagmentDemo(),
+          '/state-managment': (context) => ScopedModelDemo(),
         },
         // 设置主题
         theme: ThemeData(
